@@ -22,6 +22,7 @@ public class ProjectGroup1 {
         boolean rainLoop = true;
         int option;
         int demographic;
+        int social;
         int m;
         
                         
@@ -72,6 +73,35 @@ public class ProjectGroup1 {
                         
                     }
                     } while (demographic <= 2);
+                    case 2:
+                    do{
+                    System.out.println("what would you like to know about social datas");
+                    System.out.println("1--> half Blood people data");
+                    System.out.println("2--> montubio people data");
+                    System.out.println("3--> Afro-Ecuadorian people data");
+                    System.out.println("4--> indigenous poeple data");
+                    System.out.println("5--> withe people data");
+                    social = input.nextInt();
+                                        switch (social){
+                        case 1:
+                            System.out.println("Ecuador half blood people porcent is 71,99%");
+                            break;
+                        case 2:
+                            System.out.println("Ecuador montubios people porcent is 7,4%");                         
+                        break;
+                        case 3:
+                            System.out.println("Ecuador Afro-Ecuadorian people porcent is 7,2%");
+                            break;
+                        case 4:
+                            System.out.println("Ecuador indigenous people porcent is 7%");
+                            break;
+                        case 5:
+                            System.out.println("Ecuador indigenous people porcent is 6,1%");
+                            break;
+                    
+                    } 
+                        
+                    }while (social <= 5);
 
                     
                                   
