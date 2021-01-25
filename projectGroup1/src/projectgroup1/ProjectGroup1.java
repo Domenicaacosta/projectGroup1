@@ -26,7 +26,7 @@ public class ProjectGroup1 {
         int m;
         int economic;
         int geographyc;
-        int Quality;                
+        int Quality = 0 ;                
                
         do{            
                            
@@ -173,7 +173,7 @@ public class ProjectGroup1 {
                          switch ( Quality ){
                         case 1:
                           
-                            System.out.println(" a example of Means of communication:"");
+                            System.out.println(" a example of Means of communication:");
                             System.out.println(" telephone ");
                             System.out.println(" internet");
                             break;
