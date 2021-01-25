@@ -25,6 +25,7 @@ public class ProjectGroup1 {
         int social;
         int m;
         int economic;
+        int geographyc;
                         
                
         do{            
@@ -125,10 +126,47 @@ public class ProjectGroup1 {
                             break;
                         }
                     } while (economic <=4 );
-
+                    case 4:
+                    do{
+                        System.out.println("what would you like to know about geographyc features");
+                        System.out.println("1--> by inclination");
+                        System.out.println("2--> fluvial accidents");
+                        System.out.println("3--> mountainous and glacial features");
+                        System.out.println("4--> volcanic accidents");
+                        geographyc = input.nextInt();
+                        
+                    switch (geographyc){
+                        case 1:
+                            System.out.println(" a example of geographyc feature by inclination is an cliff ");
+                            System.out.println(" Puerto Baquerizo Moreno Cliff");
+                            System.out.println(" Jama Cliff");
+                            break;
+                        case 2: 
+                            System.out.println(" a example of fluvial accidents are gulfs and bays: ");
+                            System.out.println(" Guayaquil gulf ");
+                            System.out.println(" Tortuga bay on Galapagos Island");
+                            break;
+                        case 3:
+                            System.out.println(" a example of mountainous and glacial features ");
+                            System.out.println(" Antisana ");
+                            System.out.println(" Cotopaxi ");
+                            System.out.println(" Illinizas ");
+                            System.out.println(" all of them are located in volcanic craters ");
+                            break;
+                        case 4:
+                            System.out.println(" a example of volcanic accidents are: ");
+                            System.out.println(" lava tubes in ''el sombrero chino Island'' Galapagos ");
+                            System.out.println(" Catopaxi Volcano ");
+                            System.out.println(" Sangay Volcano ");
+                            break; 
+                    }
+                  } while (geographyc <=4); 
+                                
+                                
+                    }
                     
                                   
-        } 
+        
 
                     }while (option <=4);
             }
