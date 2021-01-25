@@ -167,7 +167,7 @@ public class ProjectGroup1 {
                                 
                     }
                    
-        } while (option <= 4)
+        } while (option <= 4);
 
                     }
             }
