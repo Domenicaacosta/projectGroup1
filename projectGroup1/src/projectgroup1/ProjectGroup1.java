@@ -167,8 +167,8 @@ public class ProjectGroup1 {
                     System.out.println("what would you like to know about quality measures");
                         System.out.println("1--> Means of communication");
                         System.out.println("2--> Transportation  ");
-                        System.out.println("3--> Public buildings ");
-                        System.out.println("4--> Services");
+                        System.out.println("3--> Services");
+                        System.out.println("4--> Public buildings");
                         Quality = input.nextInt();           
                          switch ( Quality ){
                         case 1:
