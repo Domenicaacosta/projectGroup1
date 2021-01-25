@@ -26,7 +26,7 @@ public class ProjectGroup1 {
         int m;
         int economic;
         int geographyc;
-        int queality;                
+        int Quality;                
                
         do{            
                            
@@ -36,6 +36,7 @@ public class ProjectGroup1 {
             System.out.println("2--->Social datas ");
             System.out.println("3--->economic datas ");
             System.out.println("4--> geographic features");
+             System.out.println("5--> quality measures");
             
             
             
