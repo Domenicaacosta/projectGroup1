@@ -169,7 +169,7 @@ public class ProjectGroup1 {
                         System.out.println("2--> Transportation  ");
                         System.out.println("3--> Public buildings ");
                         System.out.println("4--> Services");
-                        geographyc = input.nextInt();           
+                        Quality = input.nextInt();           
                          switch ( Quality ){
                         case 1:
                           
@@ -202,8 +202,9 @@ public class ProjectGroup1 {
                     }
                     
                                  
-            }
+            } whilw (option<=5)
 }
+}    
 
     
             
