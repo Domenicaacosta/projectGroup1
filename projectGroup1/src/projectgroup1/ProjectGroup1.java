@@ -24,7 +24,7 @@ public class ProjectGroup1 {
         int demographic;
         int social;
         int m;
-        
+        int economic;
                         
                
         do{            
@@ -102,6 +102,29 @@ public class ProjectGroup1 {
                     } 
                         
                     }while (social <= 5);
+                     case 3:
+                    do{
+                        System.out.println("what would you like to know about economic datas");
+                        System.out.println("1-->Lower class data");
+                        System.out.println("2-->vulnerable middle class data");
+                        System.out.println("4-->high class");
+                        economic = input.nextInt();       
+                                              
+                    switch (economic){
+                        case 1:
+                            System.out.println("33.6% of the population belongs to the lower class");
+                            System.out.println("median income is $ 149,71");
+                            break;
+                        case 2: 
+                            System.out.println("65,4% of the population belongs to the vulnerable middle class data");
+                            System.out.println("median income is $738,81 ");
+                            break;
+                        case 3:
+                            System.out.println("1,1% of the population belongs to the high class");
+                            System.out.println("high class income is 1633,42  ");
+                            break;
+                        }
+                    } while (economic <=4 );
 
                     
                                   
