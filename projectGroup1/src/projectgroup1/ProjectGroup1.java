@@ -202,7 +202,7 @@ public class ProjectGroup1 {
                     }
                     
                                  
-            } whilw (option<=5)
+            } while (option<=5)
 }
 }    
 
