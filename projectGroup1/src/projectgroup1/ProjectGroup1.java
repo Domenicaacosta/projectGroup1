@@ -26,7 +26,7 @@ public class ProjectGroup1 {
         int m;
         int economic;
         int geographyc;
-                        
+        int queality;                
                
         do{            
                            
@@ -161,14 +161,46 @@ public class ProjectGroup1 {
                             break; 
                     }
                   } while (geographyc <=4); 
-                                
+                        case 5:
+                    do{
+                    System.out.println("what would you like to know about quality measures");
+                        System.out.println("1--> Means of communication");
+                        System.out.println("2--> Transportation  ");
+                        System.out.println("3--> Public buildings ");
+                        System.out.println("4--> Services");
+                        geographyc = input.nextInt();           
+                         switch ( Quality ){
+                        case 1:
+                          
+                            System.out.println(" a example of Means of communication:"");
+                            System.out.println(" telephone ");
+                            System.out.println(" internet");
+                            break;
+                        case 2: 
+                            System.out.println(" a example of :Transportation  ");
+                            System.out.println(" Metrobus");
+                            System.out.println(" private car");
+                            break;
+                        case 3:
+                            System.out.println(" a example of Services ");
+                            System.out.println(" Water ");
+                            System.out.println(" electricity");
+                            System.out.println(" sever ");
+                            System.out.println("national police ");
+                            break;
+                        case 4:
+                            System.out.println(" a example of Public buildings: ");
+                            System.out.println(" SRI");
+                            System.out.println(" Hospital ");
+                            System.out.println(" central bank ");
+                            break; 
+                    }
+
+                    }while ( Quality  <=4);        
                                 
                     }
                     
-                                  
-        
-
-                    }while (option <=4);
+                                 
             }
 }
 
