@@ -26,7 +26,7 @@ public class ProjectGroup1 {
         int m;
         int economic;
         int geographyc;
-        int quality;                
+        int Quality = 0 ;                
                
         do{            
                            
@@ -36,7 +36,7 @@ public class ProjectGroup1 {
             System.out.println("2--->Social datas ");
             System.out.println("3--->economic datas ");
             System.out.println("4--> geographic features");
-             System.out.println("5--> quality measures");
+            System.out.println("5--> quality measures");
             
             
             
@@ -75,7 +75,8 @@ public class ProjectGroup1 {
                         
                     }
                     } while (demographic <= 2);
-                    case 2:
+                    
+                case 2:
                     do{
                     System.out.println("what would you like to know about social datas");
                     System.out.println("1--> half Blood people data");
@@ -90,7 +91,7 @@ public class ProjectGroup1 {
                             break;
                         case 2:
                             System.out.println("Ecuador montubios people porcent is 7,4%");                         
-                        break;
+                            break;
                         case 3:
                             System.out.println("Ecuador Afro-Ecuadorian people porcent is 7,2%");
                             break;
@@ -104,7 +105,8 @@ public class ProjectGroup1 {
                     } 
                         
                     }while (social <= 5);
-                     case 3:
+                    
+                case 3:
                     do{
                         System.out.println("what would you like to know about economic datas");
                         System.out.println("1-->Lower class data");
@@ -127,7 +129,8 @@ public class ProjectGroup1 {
                             break;
                         }
                     } while (economic <=4 );
-                    case 4:
+                    
+                case 4:
                     do{
                         System.out.println("what would you like to know about geographyc features");
                         System.out.println("1--> by inclination");
@@ -162,15 +165,16 @@ public class ProjectGroup1 {
                             break; 
                     }
                   } while (geographyc <=4); 
-                        case 5:
+                    
+                case 5:
                     do{
                     System.out.println("what would you like to know about quality measures");
                         System.out.println("1--> Means of communication");
                         System.out.println("2--> Transportation  ");
                         System.out.println("3--> Public buildings ");
                         System.out.println("4--> Services");
-                        quality = input.nextInt();           
-                    switch (quality){
+                        Quality = input.nextInt();           
+                         switch ( Quality ){
                         case 1:
                           
                             System.out.println(" a example of Means of communication:");
@@ -196,11 +200,16 @@ public class ProjectGroup1 {
                             System.out.println(" central bank ");
                             break; 
                     }
-                    }while (quality  <=4);        
+
+                    }while ( Quality  <=4);        
                                 
                     }
                     
                                  
-            } while (option <=5);
+            } while (option<=5);
 }
-}
+}    
+
+
+    
+            
