@@ -49,12 +49,22 @@ public class Project2 {
        
        String[] valueScaleInMeters = {"0.01:5000 a 0.01: 50000 m ", "0.01:500 a 0.01:50000 m", "0.01:50 a 0.01: 500 m"};
         
+       
 
         System.out.println("Types of Measure");
         for (String typesOfMeasures : typesOfMeasure) {
             System.out.println("Types of Measure -->  " + typesOfMeasures);
         }
-        
+        System.out.println("");
+        System.out.println("value in Meter");
+        for (String valueInMeters : valueInmeters) {
+            System.out.println("value in meters-->  " + valueInMeters);
+        }
+        System.out.println("");
+        System.out.println("types of Scale");
+       for (String typesOfScales : typesOfScale){
+           System.out.println("types of Scale--->" + typesOfScales);
+       }
       
     
         longitudeGrade = showLongitudeInstructions(input);
