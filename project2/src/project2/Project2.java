@@ -38,6 +38,23 @@ public class Project2 {
         double utmLatitude;
         showProgrammBanner();
         
+        System.out.println("**MAP INFORMATION*");
+        String[] typesOfMeasure = {"Decimeters","Decameters","Hectometers","Kilometers"};
+
+        String[] valueInmeters = {"0.1m", "10m", "100m", "1000m"};
+        
+        String[] typesOfScale ={"1:500000 a 1:50000000 cm", "1:50000 a 1:5000000cm", "1:5000 a 1:50000 cm "};
+       
+       String[] sizeOfScale = {"Small  ", " Medium", "Big"};
+       
+       String[] valueScaleInMeters = {"0.01:5000 a 0.01: 50000 m ", "0.01:500 a 0.01:50000 m", "0.01:50 a 0.01: 500 m"};
+        
+
+        System.out.println("Types of Measure");
+        for (String typesOfMeasures : typesOfMeasure) {
+            System.out.println("Types of Measure -->  " + typesOfMeasures);
+        }
+        
       
     
         longitudeGrade = showLongitudeInstructions(input);
