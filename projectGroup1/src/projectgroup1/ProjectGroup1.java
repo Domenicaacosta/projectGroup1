@@ -36,7 +36,11 @@ public class ProjectGroup1 {
             System.out.println("2--->Social datas ");
             System.out.println("3--->economic datas ");
             System.out.println("4--> geographic features");
+<<<<<<< HEAD
             System.out.println("5--> quality measures");
+=======
+             System.out.println("5--> quality measures");
+>>>>>>> fc3c93379c3270714b0ae88f3d70477a8bae1dc7
             
             
             
@@ -75,6 +79,7 @@ public class ProjectGroup1 {
                         
                     }
                     } while (demographic <= 2);
+<<<<<<< HEAD
                     
                 case 2:
                     do{
@@ -107,6 +112,38 @@ public class ProjectGroup1 {
                     }while (social <= 5);
                     
                 case 3:
+=======
+                    case 2:
+                    do{
+                    System.out.println("what would you like to know about social datas");
+                    System.out.println("1--> half Blood people data");
+                    System.out.println("2--> montubio people data");
+                    System.out.println("3--> Afro-Ecuadorian people data");
+                    System.out.println("4--> indigenous poeple data");
+                    System.out.println("5--> withe people data");
+                    social = input.nextInt();
+                                        switch (social){
+                        case 1:
+                            System.out.println("Ecuador half blood people porcent is 71,99%");
+                            break;
+                        case 2:
+                            System.out.println("Ecuador montubios people porcent is 7,4%");                         
+                        break;
+                        case 3:
+                            System.out.println("Ecuador Afro-Ecuadorian people porcent is 7,2%");
+                            break;
+                        case 4:
+                            System.out.println("Ecuador indigenous people porcent is 7%");
+                            break;
+                        case 5:
+                            System.out.println("Ecuador indigenous people porcent is 6,1%");
+                            break;
+                    
+                    } 
+                        
+                    }while (social <= 5);
+                     case 3:
+>>>>>>> fc3c93379c3270714b0ae88f3d70477a8bae1dc7
                     do{
                         System.out.println("what would you like to know about economic datas");
                         System.out.println("1-->Lower class data");
@@ -129,8 +166,12 @@ public class ProjectGroup1 {
                             break;
                         }
                     } while (economic <=4 );
+<<<<<<< HEAD
                     
                 case 4:
+=======
+                    case 4:
+>>>>>>> fc3c93379c3270714b0ae88f3d70477a8bae1dc7
                     do{
                         System.out.println("what would you like to know about geographyc features");
                         System.out.println("1--> by inclination");
@@ -165,14 +206,23 @@ public class ProjectGroup1 {
                             break; 
                     }
                   } while (geographyc <=4); 
+<<<<<<< HEAD
                     
                 case 5:
+=======
+                        case 5:
+>>>>>>> fc3c93379c3270714b0ae88f3d70477a8bae1dc7
                     do{
                     System.out.println("what would you like to know about quality measures");
                         System.out.println("1--> Means of communication");
                         System.out.println("2--> Transportation  ");
+<<<<<<< HEAD
                         System.out.println("3--> Public buildings ");
                         System.out.println("4--> Services");
+=======
+                        System.out.println("3--> Services");
+                        System.out.println("4--> Public buildings");
+>>>>>>> fc3c93379c3270714b0ae88f3d70477a8bae1dc7
                         Quality = input.nextInt();           
                          switch ( Quality ){
                         case 1:
