@@ -21,7 +21,7 @@ public class Project2 {
 
         Scanner input = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.00");
-        
+
         double latitude;
         double latitudeGrade;
         double longitudeGrade;
@@ -32,7 +32,6 @@ public class Project2 {
         double decimalPartLongitude;
         double wholePartLongitude;
         double secondsLongitude;
-
         double wholePartLatitude;
         double secondsLatitude;
         double utmLongitude;
@@ -104,7 +103,7 @@ public class Project2 {
 
     private static void showGeographicalCoordenates(double latitudeGrade, double wholePartLatitude, DecimalFormat df, double secondsLatitude, double longitudeGrade, double wholePartLongitude, double secondsLongitude) {
         System.out.println("THE GEOGRAPHICAL COORDENATES ARE");
-        System.out.println("The latitude coordenate is " + latitudeGrade + "°" + wholePartLatitude + "'" + df.format(secondsLatitude) + "''" + "S");
+        System.out.println("The latitude coordenate is " + latitudeGrade + "°" + df.format(wholePartLatitude) + "'" + df.format(secondsLatitude) + "''" + "S");
         System.out.println("The longitude coordenate is " + longitudeGrade + "°" + wholePartLongitude + " ' " + df.format(secondsLongitude) + " '' " + "E");
     }
 
@@ -124,7 +123,6 @@ public class Project2 {
         longitudeGrade = input.nextDouble();
         System.out.println("Measure longitude from the corner closest to your point (←)");
         System.out.println("Please enter longitude in cm ");
-        System.out.println("");
         return longitudeGrade;
     }
 
@@ -158,7 +156,7 @@ public class Project2 {
 
     private static double calculateMinutesLatitude(double longitude) {
         double minutesLatitude;
-        minutesLatitude = (longitude * 5) / 60;
+        minutesLatitude = (longitude * 5) / 33;
         return minutesLatitude;
     }
 }
