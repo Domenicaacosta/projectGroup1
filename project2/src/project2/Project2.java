@@ -37,7 +37,9 @@ public class Project2 {
         double utmLongitude;
         double utmLatitude;
         showProgrammBanner();
-
+        
+      
+    
         longitudeGrade = showLongitudeInstructions(input);
         longitude = input.nextDouble();
         minutesLongitude = calculateMinutesLongitude(longitude);
