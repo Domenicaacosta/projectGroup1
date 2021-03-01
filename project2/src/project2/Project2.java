@@ -119,8 +119,8 @@ public class Project2 {
 
     private static double showLongitudeInstructions(Scanner input) {
         double longitudeGrade;
-        System.out.println("Please enter the longitude grade of your point ");
-        longitudeGrade = input.nextDouble();
+        
+        longitudeGrade = 78;
         System.out.println("Measure longitude from the point in horizontal line to right edge of map (→)");
         System.out.println("Please enter longitude in cm ");
         return longitudeGrade;
@@ -128,11 +128,11 @@ public class Project2 {
 
     private static double showLatitudeInstructions(Scanner input) {
         double latitudeGrade;
-        System.out.println("Please enter de latitude grade of your point");
-        latitudeGrade = input.nextDouble();
+        
+        latitudeGrade = 0;
         System.out.println("Measure latitude from your point in vertical line to bottom edge to the map (↓)");
         System.out.println("Please enter latitude in cm ");
-        System.out.println("");
+        
         return latitudeGrade;
     }
 
