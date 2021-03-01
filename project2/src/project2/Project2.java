@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2;
+package Project2;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -65,7 +65,17 @@ public class Project2 {
        for (String typesOfScales : typesOfScale){
            System.out.println("types of Scale--->" + typesOfScales);
        }
-      
+             System.out.println("");
+            System.out.println(" Size of Scale");
+            for (String sizeOfScales : sizeOfScale ){
+                System.out.println(" Size of Scale ---->"  + sizeOfScales);
+            }
+        System.out.println("");
+        System.out.println("Value Scale in Meters");
+        for (String ValueScaleInMeters : valueScaleInMeters){
+            System.out.println("value Scale InMeters ----> " + ValueScaleInMeters);
+        }  
+
     
         longitudeGrade = showLongitudeInstructions(input);
         longitude = input.nextDouble();
