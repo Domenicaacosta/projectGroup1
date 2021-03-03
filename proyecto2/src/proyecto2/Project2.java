@@ -36,6 +36,7 @@ public class Project2 {
         double secondsLatitude;
         double utmLongitude;
         double utmLatitude;
+        int scaleTransformation =0;
         showProgrammBanner();
         
         System.out.println("**MAP INFORMATION*");
@@ -43,11 +44,9 @@ public class Project2 {
 
         String[] valueInmeters = {"0.1m", "10m", "100m", "1000m"};
         
-        String[] typesOfScale ={"1:500000 a 1:50000000 cm", "1:50000 a 1:5000000cm", "1:5000 a 1:50000 cm "};
        
        String[] sizeOfScale = {"Small  ", " Medium", "Big"};
        
-       String[] valueScaleInMeters = {"0.01:5000 a 0.01: 50000 m ", "0.01:500 a 0.01:50000 m", "0.01:50 a 0.01: 500 m"};
         
        int[] Scale = {500000, 50000, 5000};
 
@@ -71,23 +70,13 @@ public class Project2 {
         for (String valueInMeters : valueInmeters) {
             System.out.println("value in meters-->  " + valueInMeters);
         }
-        System.out.println("");
-        System.out.println("types of Scale");
-       for (String typesOfScales : typesOfScale){
-           System.out.println("types of Scale--->" + typesOfScales);
-       }
+       
              System.out.println("");
             System.out.println(" Size of Scale");
             for (String sizeOfScales : sizeOfScale ){
                 System.out.println(" Size of Scale ---->"  + sizeOfScales);
             }
-        System.out.println("");
-        System.out.println("Value Scale in Meters");
-        for (String ValueScaleInMeters : valueScaleInMeters){
-            System.out.println("value Scale InMeters ----> " + ValueScaleInMeters);
-        }  
-
-    
+     
         longitudeGrade = showLongitudeInstructions(input);
         longitude = input.nextDouble();
         minutesLongitude = calculateMinutesLongitude(longitude);
