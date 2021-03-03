@@ -49,7 +49,17 @@ public class Project2 {
        
        String[] valueScaleInMeters = {"0.01:5000 a 0.01: 50000 m ", "0.01:500 a 0.01:50000 m", "0.01:50 a 0.01: 500 m"};
         
-       
+       int[] Scale = {500000, 50000, 5000};
+
+        int[] scale = new int[3];
+        System.out.println("------the scale transformed to meters is------------");
+
+        for (int i = 0; i < 3; i++) {
+            scaleTransformation = Scale[i] / 100;
+            System.out.println("The Scale 1:" + Scale[i] + " means 1cm in the map is " + scaleTransformation + "m in the reality");
+
+        }
+        System.out.println("");
 
         System.out.println("Types of Measure");
         for (String typesOfMeasures : typesOfMeasure) {
