@@ -36,23 +36,20 @@ public class Project2 {
         double secondsLatitude;
         double utmLongitude;
         double utmLatitude;
-        int scaleTransformation =0;
+        int scaleTransformation = 0;
+        longitudeGrade = 78;
+        latitudeGrade = 0;
+
         showProgrammBanner();
-        
-        System.out.println("**MAP INFORMATION*");
-        String[] typesOfMeasure = {"Decimeters","Decameters","Hectometers","Kilometers"};
 
+        System.out.println("                **** MAP INFORMATION ****");
+        String[] typesOfMeasure = {"Decimeters", "Decameters", "Hectometers", "Kilometers"};
         String[] valueInmeters = {"0.1m", "10m", "100m", "1000m"};
-        
-       
-       String[] sizeOfScale = {"Small  ", " Medium", "Big"};
-       
-        
-       int[] Scale = {500000, 50000, 5000};
-
+        String[] sizeOfScale = {"Small  ", " Medium", "Big"};
+        int[] Scale = {500000, 50000, 5000};
         int[] scale = new int[3];
-        System.out.println("------the scale transformed to meters is------------");
 
+        System.out.println("------the scale transformed to meters is------------");
         for (int i = 0; i < 3; i++) {
             scaleTransformation = Scale[i] / 100;
             System.out.println("The Scale 1:" + Scale[i] + " means 1cm in the map is " + scaleTransformation + "m in the reality");
@@ -60,34 +57,26 @@ public class Project2 {
         }
         System.out.println("");
 
-        System.out.println("Types of Measure");
-        for (String typesOfMeasures : typesOfMeasure) {
-            System.out.println("Types of Measure -->  " + typesOfMeasures);
-        }
-        
+        showTypesOfMeasureArray(typesOfMeasure);
+
         System.out.println("");
-        System.out.println("value in Meter");
-        for (String valueInMeters : valueInmeters) {
-            System.out.println("value in meters-->  " + valueInMeters);
-        }
-       
-             System.out.println("");
-            System.out.println(" Size of Scale");
-            for (String sizeOfScales : sizeOfScale ){
-                System.out.println(" Size of Scale ---->"  + sizeOfScales);
-            }
-     
-        longitudeGrade = showLongitudeInstructions(input);
+        showValueInMetersArray(valueInmeters);
+
+        System.out.println("");
+        showSizeOfScaleArray(sizeOfScale);
+
+        System.out.println("");
+        showLongitudeInstructions();
         longitude = input.nextDouble();
         minutesLongitude = calculateMinutesLongitude(longitude);
         decimalPartLongitude = calculateDecimalPartLongitude(minutesLongitude);
         wholePartLongitude = calculateWholePartLongitude(minutesLongitude, decimalPartLongitude);
         secondsLongitude = calculateSecondsLongitude(decimalPartLongitude);
 
-        latitudeGrade = showLatitudeInstructions(input);
+        showLatitudeInstructions();
         latitude = input.nextDouble();
-        minutesLatitude = calculateMinutesLatitude(longitude);
-        decimalPartLatitude = calculateDecimalPartLatitude(minutesLongitude);
+        minutesLatitude = calculateMinutesLatitude(latitude);
+        decimalPartLatitude = calculateDecimalPartLatitude(minutesLatitude);
         wholePartLatitude = calculateWholaPartLatitude(minutesLatitude, decimalPartLatitude);
         secondsLatitude = calculateSecondsLatitude(decimalPartLatitude);
 
@@ -96,6 +85,27 @@ public class Project2 {
         utmLongitude = calculateUtmLongitude(longitude);
         utmLatitude = calculateUtmLatitude(latitude);
         showUtmCoordenates(df, utmLongitude, utmLatitude);
+    }
+
+    private static void showSizeOfScaleArray(String[] sizeOfScale) {
+        System.out.println(" Size of Scale");
+        for (String sizeOfScales : sizeOfScale) {
+            System.out.println(" Size of Scale ---->" + sizeOfScales);
+        }
+    }
+
+    private static void showValueInMetersArray(String[] valueInmeters) {
+        System.out.println("value in Meter");
+        for (String valueInMeters : valueInmeters) {
+            System.out.println("value in meters-->  " + valueInMeters);
+        }
+    }
+
+    private static void showTypesOfMeasureArray(String[] typesOfMeasure) {
+        System.out.println("Types of Measure");
+        for (String typesOfMeasures : typesOfMeasure) {
+            System.out.println("Types of Measure -->  " + typesOfMeasures);
+        }
     }
 
     private static double calculateSecondsLongitude(double decimalPartLongitude) {
@@ -151,28 +161,23 @@ public class Project2 {
         //Coordinate[1]= UTM
         System.out.println("•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•✦•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•");
         System.out.println("                𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓒𝓸𝓸𝓻𝓭𝓲𝓷𝓪𝓽𝓮 𝓒𝓪𝓵𝓬𝓾𝓵𝓪𝓽𝓸𝓻                ");
-        System.out.println("𝑌𝑜𝑢 𝑐𝑎𝑛 𝑐𝑎𝑙𝑐𝑢𝑙𝑎𝑡𝑒 𝐺𝑒𝑜𝑔𝑟𝑎𝑝ℎ𝑖𝑐𝑎𝑙 𝑎𝑛𝑑 𝑈𝑇𝑀 𝑐𝑜𝑜𝑟𝑑𝑒𝑛𝑎𝑡𝑒𝑠 𝑜𝑓 𝑄𝑢𝑖𝑡𝑜'𝑠 𝑀𝑎𝑝    ");
+        System.out.println("𝑌𝑜𝑢 𝑐𝑎𝑛 𝑐𝑎𝑙𝑐𝑢𝑙𝑎𝑡𝑒 𝐺𝑒𝑜𝑔𝑟𝑎𝑝ℎ𝑖𝑐𝑎𝑙 𝑎𝑛𝑑 𝑈𝑇𝑀 𝑐𝑜𝑜𝑟𝑑𝑒𝑛𝑎𝑡𝑒𝑠 𝑜𝑓 𝑄𝑢𝑖𝑡𝑜'𝑠 𝑀𝑎𝑝         ");
         System.out.println("𝐼𝑛 𝑦𝑜𝑢𝑟 𝑚𝑎𝑝 𝑠𝑒𝑙𝑒𝑐𝑡 𝑡ℎ𝑒 𝑝𝑜𝑖𝑛𝑡 𝑦𝑜𝑢 𝑤𝑎𝑛𝑡");
         System.out.println("•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•✦•──•─•──•─•──•─•──•─•──•─•──•─•──•─•──•─•");
     }
 
-    private static double showLongitudeInstructions(Scanner input) {
-        double longitudeGrade;
-        
-        longitudeGrade = 78;
+    private static void showLongitudeInstructions() {
+
         System.out.println("Measure longitude from the point in horizontal line to right edge of map (→)");
         System.out.println("Please enter longitude in cm ");
-        return longitudeGrade;
+
     }
 
-    private static double showLatitudeInstructions(Scanner input) {
-        double latitudeGrade;
-        
-        latitudeGrade = 0;
+    private static void showLatitudeInstructions() {
+
         System.out.println("Measure latitude from your point in vertical line to bottom edge to the map (↓)");
         System.out.println("Please enter latitude in cm ");
-        
-        return latitudeGrade;
+
     }
 
     private static double calculateSecondsLatitude(double decimalPartLatitude) {
@@ -187,15 +192,15 @@ public class Project2 {
         return wholePartLatitude;
     }
 
-    private static double calculateDecimalPartLatitude(double minutesLongitude) {
+    private static double calculateDecimalPartLatitude(double minutesLatitude) {
         double decimalPartLatitude;
-        decimalPartLatitude = (minutesLongitude % 1);
+        decimalPartLatitude = (minutesLatitude % 1);
         return decimalPartLatitude;
     }
 
-    private static double calculateMinutesLatitude(double longitude) {
+    private static double calculateMinutesLatitude(double latitude) {
         double minutesLatitude;
-        minutesLatitude = (longitude * 5) / 33;
+        minutesLatitude = (latitude * 5) / 33;
         return minutesLatitude;
     }
 }
