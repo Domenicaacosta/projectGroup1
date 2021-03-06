@@ -23,8 +23,8 @@ public class Project2 {
         DecimalFormat df = new DecimalFormat("#.00");
 
         double latitude;
-        double latitudeGrade;
-        double longitudeGrade;
+        double latitudeGrade = 0;
+        double longitudeGrade = 78;
         double longitude;
         double minutesLatitude;
         double minutesLongitude;
@@ -36,9 +36,6 @@ public class Project2 {
         double secondsLatitude;
         double utmLongitude;
         double utmLatitude;
-        int scaleTransformation = 0;
-        longitudeGrade = 78;
-        latitudeGrade = 0;
 
         showProgrammBanner();
 
@@ -83,13 +80,14 @@ public class Project2 {
         showUtmCoordenates(df, utmLongitude, utmLatitude);
     }
 
-    private static void getScaleTransformation(int[] Scale) {
-        int scaleTransformation;
+    private static int getScaleTransformation(int[] Scale) {
+        int scaleTransformation = 0;
         for (int i = 0; i < 3; i++) {
             scaleTransformation = Scale[i] / 100;
             ShowScaleTransformation(Scale, i, scaleTransformation);
-            
+
         }
+        return scaleTransformation;
     }
 
     private static void ShowScaleTransformation(int[] Scale, int i, int scaleTransformation) {
