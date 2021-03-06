@@ -49,12 +49,8 @@ public class Project2 {
         int[] Scale = {500000, 50000, 5000};
         int[] scale = new int[3];
 
-        System.out.println("------the scale transformed to meters is------------");
-        for (int i = 0; i < 3; i++) {
-            scaleTransformation = Scale[i] / 100;
-            System.out.println("The Scale 1:" + Scale[i] + " means 1cm in the map is " + scaleTransformation + "m in the reality");
-
-        }
+        System.out.println("------The scale transformed to meters is------------");
+        getScaleTransformation(Scale);
         System.out.println("");
 
         showTypesOfMeasureArray(typesOfMeasure);
@@ -85,6 +81,19 @@ public class Project2 {
         utmLongitude = calculateUtmLongitude(longitude);
         utmLatitude = calculateUtmLatitude(latitude);
         showUtmCoordenates(df, utmLongitude, utmLatitude);
+    }
+
+    private static void getScaleTransformation(int[] Scale) {
+        int scaleTransformation;
+        for (int i = 0; i < 3; i++) {
+            scaleTransformation = Scale[i] / 100;
+            ShowScaleTransformation(Scale, i, scaleTransformation);
+            
+        }
+    }
+
+    private static void ShowScaleTransformation(int[] Scale, int i, int scaleTransformation) {
+        System.out.println("The Scale 1:" + Scale[i] + " means 1cm in the map is " + scaleTransformation + "m in the reality");
     }
 
     private static void showSizeOfScaleArray(String[] sizeOfScale) {
