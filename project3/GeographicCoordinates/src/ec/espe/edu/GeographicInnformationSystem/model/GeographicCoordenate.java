@@ -11,12 +11,16 @@ package ec.espe.edu.GeographicInnformationSystem.model;
  */
 public class GeographicCoordenate {
 
-    private Float longitude;
+     private Float longitude;
     private Float latitude;
+    private Float utmlongitude;
+    private Float utmlatitude;
 
-    public GeographicCoordenate(Float longitude, Float latitude) {
+    public GeographicCoordenate(Float longitude, Float latitude, Float utmlongitude, Float utmlatitude) {
         this.longitude = longitude;
         this.latitude = latitude;
+        this.utmlongitude = utmlongitude;
+        this.utmlatitude = utmlatitude;
     }
 
     /**
@@ -46,4 +50,34 @@ public class GeographicCoordenate {
     public void setLatitude(Float latitude) {
         this.latitude = latitude;
     }
-}
+
+    /**
+     * @return the utmlongitude
+     */
+    public Float getUtmlongitude() {
+        return utmlongitude;
+    }
+
+    /**
+     * @param utmlongitude the utmlongitude to set
+     */
+    public void setUtmlongitude(Float utmlongitude) {
+        this.utmlongitude = utmlongitude;
+    }
+
+    /**
+     * @return the utmlatitude
+     */
+    public Float getUtmlatitude() {
+        return utmlatitude;
+    }
+
+    /**
+     * @param utmlatitude the utmlatitude to set
+     */
+    public void setUtmlatitude(Float utmlatitude) {
+        this.utmlatitude = utmlatitude;
+    }
+
+   
+    }
