@@ -126,4 +126,17 @@ public class GeographicCoordenateController {
         return data;
 
 }
+        private static double calculateScale(float Scale){
+            float utmScale;
+                utmScale = Scale / 100;
+                return utmScale;
+                
+        }
+        
+
+                
+                
+                
+                
+    
 }

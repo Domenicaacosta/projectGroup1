@@ -23,6 +23,10 @@ public class GeographicCoordenate {
         this.utmlatitude = utmlatitude;
     }
 
+    public GeographicCoordenate(float Scale) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * @return the longitude
      */
