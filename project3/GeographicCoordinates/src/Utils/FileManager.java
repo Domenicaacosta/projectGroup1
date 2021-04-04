@@ -77,7 +77,24 @@ public class FileManager {
         }
         return saved;
     }
+            
+            public static String read(String fileName) {
+        String text = " ";
+        try {
+            Scanner s = new Scanner(new File(fileName));
+            while (s.hasNextLine()) {
+                text = text + s.nextLine() + "\n";
 
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("file not found");
+        }
+           return text;
+    }
+   
+            
+    }  
     
 
-}
+

@@ -41,7 +41,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         btnCalculate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtShowGeographicCoordinate = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        btnShow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,11 +80,11 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         txtShowGeographicCoordinate.setRows(5);
         jScrollPane1.setViewportView(txtShowGeographicCoordinate);
 
-        jButton1.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
-        jButton1.setText("Show Coordanates");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnShow.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        btnShow.setText("Show Coordanates");
+        btnShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnShowActionPerformed(evt);
             }
         });
 
@@ -125,7 +125,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                         .addGap(67, 67, 67))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnShow)
                 .addGap(169, 169, 169))
         );
         layout.setVerticalGroup(
@@ -153,7 +153,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnShow)
                 .addContainerGap(191, Short.MAX_VALUE))
         );
 
@@ -195,9 +195,12 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnCalculateActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
+        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
+                  txtShowGeographicCoordinate.setText(geographicCoordenateController.read());
+        
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnShowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,7 +239,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnShow;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

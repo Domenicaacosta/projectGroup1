@@ -102,5 +102,10 @@ public class GeographicCoordenateController {
         secondsLongitude = decimalPartLongitude * 60;
         return secondsLongitude;
     }
+        public String read (){
+        String data;
+        data= FileManager.read("GeographicCoordenateController");
+        return data;
 
+}
 }
