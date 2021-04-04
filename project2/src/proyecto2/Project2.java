@@ -160,7 +160,7 @@ public class Project2 {
     private static void showGeographicalCoordenates(double latitudeGrade, double wholePartLatitude, DecimalFormat df, double secondsLatitude, double longitudeGrade, double wholePartLongitude, double secondsLongitude) {
         System.out.println("THE GEOGRAPHICAL COORDENATES ARE");
         System.out.println("The latitude coordenate is " + latitudeGrade + "°" + df.format(wholePartLatitude) + "'" + df.format(secondsLatitude) + "''" + "S");
-        System.out.println("The longitude coordenate is " + longitudeGrade + "°" + wholePartLongitude + " ' " + df.format(secondsLongitude) + " '' " + "E");
+        System.out.println("The longitude coordenate is " + longitudeGrade + "°" + df.format(secondsLongitude)+ " ' " +   wholePartLongitude +   " '' " + "O");
     }
 
     private static void showProgrammBanner() {
