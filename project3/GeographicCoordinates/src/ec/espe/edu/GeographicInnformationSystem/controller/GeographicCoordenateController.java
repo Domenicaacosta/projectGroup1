@@ -8,7 +8,7 @@ package ec.espe.edu.GeographicInnformationSystem.controller;
 import Utils.FileManager;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
 import javax.swing.JOptionPane;
-
+import java.text.DecimalFormat;
 /**
  *
  * @author Domenica
@@ -101,6 +101,17 @@ public class GeographicCoordenateController {
         float secondsLongitude;
         secondsLongitude = decimalPartLongitude * 60;
         return secondsLongitude;
+    }
+    private static double calculateUtmLatitude(float latitude) {
+        float utmLatitude;
+        utmLatitude = (latitude * 1000) / 3;
+        return utmLatitude;
+    }
+
+    private static double calculateUtmLongitude(float longitude) {
+        float utmLongitude;
+        utmLongitude = (longitude * 1000) / 3;
+        return utmLongitude;
     }
         public String read (){
         String data;
