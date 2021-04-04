@@ -102,6 +102,13 @@ public class GeographicCoordenateController {
         secondsLongitude = decimalPartLongitude * 60;
         return secondsLongitude;
     }
+    
+    private static void showUtmCoordenates(DecimalFormat df, float utmLongitude, float utmLatitude) {
+        System.out.println("THE UTM COORDENATES ARE ");
+        System.out.println(df.format(utmLongitude) + "m E ");
+        System.out.println(df.format(utmLatitude) + "m S ");
+    }
+
     private static double calculateUtmLatitude(float latitude) {
         float utmLatitude;
         utmLatitude = (latitude * 1000) / 3;
