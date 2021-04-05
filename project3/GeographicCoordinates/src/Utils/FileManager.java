@@ -27,10 +27,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
-
-
-
 /**
  *
  * @author Domenica
@@ -66,7 +62,7 @@ public class FileManager {
         createFile(fileName);
 
         try {
-            FileWriter myWrite = new FileWriter(fileName + ".txt", true);
+            FileWriter myWrite = new FileWriter(fileName + ".csv", true);
             myWrite.write(System.getProperty("line.separator") + data);
             myWrite.close();
             System.out.println("a new record of " + fileName + " was saved");
@@ -77,8 +73,8 @@ public class FileManager {
         }
         return saved;
     }
-            
-            public static String read(String fileName) {
+
+    public static String read(String fileName) {
         String text = " ";
         try {
             Scanner s = new Scanner(new File(fileName));
@@ -90,11 +86,7 @@ public class FileManager {
         } catch (FileNotFoundException e) {
             System.out.println("file not found");
         }
-           return text;
+        return text;
     }
-   
-            
-    }  
-    
 
-
+}

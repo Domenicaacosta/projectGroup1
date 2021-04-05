@@ -10,82 +10,44 @@ package ec.espe.edu.GeographicInnformationSystem.model;
  * @author Domenica
  */
 public class GeographicCoordenate {
+    private float latitude;
+    private float longitude;
 
-     private Float longitude;
-    private Float latitude;
-    private Float utmlongitude;
-    private Float utmlatitude;
-
-    public GeographicCoordenate(Float longitude, Float latitude, Float utmlongitude, Float utmlatitude) {
-        this.longitude = longitude;
+    public GeographicCoordenate(float latitude, float longitude) {
         this.latitude = latitude;
-        this.utmlongitude = utmlongitude;
-        this.utmlatitude = utmlatitude;
-    }
-
-    public GeographicCoordenate(float Scale) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     * @return the longitude
-     */
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    /**
-     * @param longitude the longitude to set
-     */
-    public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
 
     /**
      * @return the latitude
      */
-    public Float getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
     /**
      * @param latitude the latitude to set
      */
-    public void setLatitude(Float latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
     /**
-     * @return the utmlongitude
+     * @return the longitude
      */
-    public Float getUtmlongitude() {
-        return utmlongitude;
+    public float getLongitude() {
+        return longitude;
     }
 
     /**
-     * @param utmlongitude the utmlongitude to set
+     * @param longitude the longitude to set
      */
-    public void setUtmlongitude(Float utmlongitude) {
-        this.utmlongitude = utmlongitude;
-    }
-
-    /**
-     * @return the utmlatitude
-     */
-    public Float getUtmlatitude() {
-        return utmlatitude;
-    }
-
-    /**
-     * @param utmlatitude the utmlatitude to set
-     */
-    public void setUtmlatitude(Float utmlatitude) {
-        this.utmlatitude = utmlatitude;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
     public Object getName() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
-    }
+    
+}

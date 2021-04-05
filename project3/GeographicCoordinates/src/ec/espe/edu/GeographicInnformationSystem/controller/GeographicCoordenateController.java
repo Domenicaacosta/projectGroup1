@@ -7,8 +7,10 @@ package ec.espe.edu.GeographicInnformationSystem.controller;
 
 import Utils.FileManager;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
+import ec.espe.edu.GeographicInnformationSystem.model.UtmCoordenate;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
+
 /**
  *
  * @author Domenica
@@ -122,7 +124,7 @@ public class GeographicCoordenateController {
     }
         public String read (){
         String data;
-        data= FileManager.read("GeographicCoordenateController");
+        data= FileManager.read("geographicCoordenates.csv");
         return data;
 
 }
