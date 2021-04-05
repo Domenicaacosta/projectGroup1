@@ -5,10 +5,13 @@
  */
 package ec.espe.edu.GeographicInnformationSystem.view;
 
+import ec.espe.edu.GeographicInnformationSystem.controller.CalculateScaleController;
 import ec.espe.edu.GeographicInnformationSystem.controller.GeographicCoordenateController;
+import ec.espe.edu.GeographicInnformationSystem.controller.UtmCoordenateController;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
 import ec.espe.edu.GeographicInnformationSystem.model.UtmCoordenate;
 import javax.swing.JOptionPane;
+import static javax.swing.Spring.scale;
 
 /**
  *
@@ -170,33 +173,34 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addComponent(btnCalculateScale)
                                 .addGap(150, 150, 150))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(109, 109, 109)
-                                        .addComponent(txtEnterTheScale, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnSave))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(105, 105, 105)
-                                        .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel6))
-                                        .addGap(66, 66, 66)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(txtutmLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCalculate)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btnSave)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel8)
+                                                .addGap(109, 109, 109)
+                                                .addComponent(txtEnterTheScale, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addGap(105, 105, 105)
+                                                .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(jLabel5)
+                                                    .addComponent(jLabel6))
+                                                .addGap(66, 66, 66)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(txtutmLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnCalculate)))
                                 .addGap(11, 11, 11)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +218,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                                     .addComponent(btnutmCoordenates))))
                         .addGap(67, 67, 67))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 192, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,10 +265,10 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                     .addComponent(txtutmLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
                     .addComponent(txtshowUtmCoordenates, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave))
                 .addGap(24, 24, 24)
                 .addComponent(btnutmCoordenates)
                 .addGap(41, 41, 41)
@@ -331,57 +335,58 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
 
     private void btnutmCoordenatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnutmCoordenatesActionPerformed
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        txtshowUtmCoordenates.setText(geographicCoordenateController.read());
+        UtmCoordenateController utmCoordenateController = new UtmCoordenateController();
+        txtshowUtmCoordenates.setText(utmCoordenateController.read());
     }//GEN-LAST:event_btnutmCoordenatesActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        float latitude;
-        float longitude;
+        UtmCoordenate utmCoordenate;
+        float utmLatitude;
+        float utmLongitude;
+        UtmCoordenateController utmCoordenateController = new UtmCoordenateController();
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        GeographicCoordenate geographicCoordenate = null;
+        utmLatitude = Float.parseFloat(txtutmLatitude.getText());
+        utmLongitude = Float.parseFloat(txtutmLongitude.getText());
 
-        latitude = Float.parseFloat(txtutmLatitude.getText());
-        longitude = Float.parseFloat(txtutmLongitude.getText());
+        utmCoordenate = new UtmCoordenate(utmLatitude, utmLongitude);
+        utmCoordenateController.save(utmCoordenate);
 
-        geographicCoordenateController.save(geographicCoordenate);
-
-        JOptionPane.showMessageDialog(rootPane, geographicCoordenate.getName());
+        JOptionPane.showMessageDialog(rootPane, utmCoordenate.getName());
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnSaveScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveScaleActionPerformed
-        float Scale;
+        CalculateScale calculateScale;
+        float scale;
+        CalculateScaleController calculateScaleController = new CalculateScaleController();
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        UtmCoordenate geographicCoordenate = null;
+        scale = Float.parseFloat(btnCalculateScale.getText());
+        
+        calculateScale = new CalculateScale(scale);
+        calculateScaleController.save(Scale);
 
-        Scale = Float.parseFloat(btnCalculateScale.getText());
-
-        geographicCoordenateController.save(geographicCoordenate);
-
-        JOptionPane.showMessageDialog(rootPane, geographicCoordenate.getName());
+        JOptionPane.showMessageDialog(rootPane, calculateScale.getName());
 
 
     }//GEN-LAST:event_btnSaveScaleActionPerformed
 
     private void btnCalculateScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateScaleActionPerformed
-        Float Scale;
+        CalculateScale calculateScale;
+        float scale;
+        CalculateScaleController calculateScaleController = new CalculateScaleController();
+ 
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        UtmCoordenate geographicCoordenate;
+        scale = Float.parseFloat(txtEnterTheScale.getText());
 
-        Scale = Float.parseFloat(txtEnterTheScale.getText());
+        calculateScale = new CalculateScale(scale);
+        calculateScaleController.save(calculateScale);
 
-        geographicCoordenate = new UtmCoordenate(Scale);
-
-        JOptionPane.showMessageDialog(rootPane, " Transfotmation Scale --> " + Scale);
+        JOptionPane.showMessageDialog(rootPane, " Transfotmation Scale --> " + scale);
     }//GEN-LAST:event_btnCalculateScaleActionPerformed
 
     private void btnShowScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowScaleActionPerformed
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        txtCalculateTheScale.setText(geographicCoordenateController.read());
+        CalculateScaleController calculateScaleController = new CalculateScaleController();
+        txtCalculateTheScale.setText(calculateScaleController.read());
     }//GEN-LAST:event_btnShowScaleActionPerformed
 
     /**
