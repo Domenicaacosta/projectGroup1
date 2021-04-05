@@ -79,5 +79,9 @@ public class GeographicCoordenate {
         this.utmlatitude = utmlatitude;
     }
 
+    public Object getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
     }
