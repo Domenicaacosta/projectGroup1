@@ -5,7 +5,11 @@
  */
 package ec.espe.edu.GeographicInnformationSystem.controller;
 
+<<<<<<< HEAD
 import Utils.GeographicFileManager;
+=======
+import Utils.FileManager;
+>>>>>>> 27256439f7ab551093cb51b69cdc4f7bb87f6b56
 import Utils.UtmFileManager;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
 import ec.espe.edu.GeographicInnformationSystem.model.UtmCoordenate;
@@ -16,6 +20,7 @@ import java.text.DecimalFormat;
  * @author Asus
  */
 public class UtmCoordenateController {
+<<<<<<< HEAD
 
     public void save(UtmCoordenate utmCoordenate) {
         float utmMeridian;
@@ -68,4 +73,36 @@ public class UtmCoordenateController {
 
     }
 
+=======
+    
+    public void save(UtmCoordenate utmCoordenate) {
+        String data = utmCoordenate.getUtmlatitude()+ ";" + utmCoordenate.getUtmlongitude();
+        UtmFileManager.save(data, "coordenates");
+    }
+    private static void showUtmCoordenates(DecimalFormat df, float utmLongitude, float utmLatitude) {
+        System.out.println("THE UTM COORDENATES ARE ");
+        System.out.println(df.format(utmLongitude) + "m E ");
+        System.out.println(df.format(utmLatitude) + "m S ");
+    }
+
+    private static double calculateUtmLatitude(float latitude) {
+        float utmLatitude;
+        utmLatitude = (latitude * 1000) / 3;
+        return utmLatitude;
+    }
+
+    private static double calculateUtmLongitude(float longitude) {
+        float utmLongitude;
+        utmLongitude = (longitude * 1000) / 3;
+        return utmLongitude;
+    }
+        public String read (){
+        String data;
+        data= UtmFileManager.read("coordenates.csv");
+        return data;
+
+}
+
+    
+>>>>>>> 27256439f7ab551093cb51b69cdc4f7bb87f6b56
 }

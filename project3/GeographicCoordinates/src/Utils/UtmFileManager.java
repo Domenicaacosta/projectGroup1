@@ -43,7 +43,11 @@ public class UtmFileManager {
         createFile(fileName);
 
         try {
+<<<<<<< HEAD
             FileWriter myWrite = new FileWriter(fileName + ".txt", true);
+=======
+            FileWriter myWrite = new FileWriter(fileName + ".csv", true);
+>>>>>>> 27256439f7ab551093cb51b69cdc4f7bb87f6b56
             myWrite.write(System.getProperty("line.separator") + data);
             myWrite.close();
             System.out.println("a new record of " + fileName + " was saved");
