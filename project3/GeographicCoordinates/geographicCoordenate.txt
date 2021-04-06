@@ -26,3 +26,11 @@ Latitude: 0.0° 3.0' 29.09091'' S
 ---Geographic Coordenates---
 Longitude: 78° 58.006042' 0.0'' O
 Latitude: 0.0° 4.0' 29.09091'' S
+
+---Geographic Coordenates---
+Longitude: 78° 36.253777' 0.0'' O
+Latitude: 0.0° 4.0' 0.90909004'' S
+
+---Geographic Coordenates---
+Longitude: 78° 21.570997' 1.0'' O
+Latitude: 0.0° 5.0' 18.18183'' S
