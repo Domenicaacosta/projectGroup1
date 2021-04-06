@@ -5,10 +5,14 @@
  */
 package ec.espe.edu.GeographicInnformationSystem.view;
 
+import ec.espe.edu.GeographicInnformationSystem.controller.ScaleController;
 import ec.espe.edu.GeographicInnformationSystem.controller.GeographicCoordenateController;
+import ec.espe.edu.GeographicInnformationSystem.controller.UtmCoordenateController;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
+import ec.espe.edu.GeographicInnformationSystem.model.Scale;
 import ec.espe.edu.GeographicInnformationSystem.model.UtmCoordenate;
 import javax.swing.JOptionPane;
+import static javax.swing.Spring.scale;
 
 /**
  *
@@ -47,16 +51,19 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         btnutmCoordenates = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtutmLatitude = new javax.swing.JTextField();
-        txtutmLongitude = new javax.swing.JTextField();
+        txtMeridian = new javax.swing.JTextField();
+        txtParalel = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        txtEnterTheScale = new javax.swing.JTextField();
+        txtScale = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtCalculateTheScale = new javax.swing.JTextArea();
         btnCalculateScale = new javax.swing.JButton();
-        btnSaveScale = new javax.swing.JButton();
         btnShowScale = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtMeridianCm = new javax.swing.JTextField();
+        txtParalelCm = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +90,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         txtLatitude.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
 
         btnCalculate.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
-        btnCalculate.setText("Calculate");
+        btnCalculate.setText("Calculate Geographic Coordenates");
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalculateActionPerformed(evt);
@@ -96,14 +103,17 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtShowGeographicCoordinate);
 
         btnShow.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
-        btnShow.setText("Show Coordanates");
+        btnShow.setText("Show Geographic Coordanates");
         btnShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowActionPerformed(evt);
             }
         });
 
-        btnutmCoordenates.setText("UTM Coordenates");
+        txtshowUtmCoordenates.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+
+        btnutmCoordenates.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        btnutmCoordenates.setText("Show UTM Coordenates");
         btnutmCoordenates.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnutmCoordenatesActionPerformed(evt);
@@ -111,16 +121,17 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
-        jLabel6.setText("UTM Latitude:");
+        jLabel6.setText("Enter Meridian UTM :");
 
         jLabel7.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
-        jLabel7.setText("UTM Longitude:");
+        jLabel7.setText("Enter Paralel UTM :");
 
-        txtutmLatitude.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        txtMeridian.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
 
-        txtutmLongitude.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        txtParalel.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
 
-        btnSave.setText("Save");
+        btnSave.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        btnSave.setText("Calculate UTM coordenates");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -130,10 +141,19 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
         jLabel8.setText("Enter the scale:");
 
+        txtScale.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+        txtScale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtScaleActionPerformed(evt);
+            }
+        });
+
         txtCalculateTheScale.setColumns(20);
+        txtCalculateTheScale.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
         txtCalculateTheScale.setRows(5);
         jScrollPane2.setViewportView(txtCalculateTheScale);
 
+        btnCalculateScale.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
         btnCalculateScale.setText("Calculate Scale");
         btnCalculateScale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,13 +161,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
             }
         });
 
-        btnSaveScale.setText("Save Scale");
-        btnSaveScale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveScaleActionPerformed(evt);
-            }
-        });
-
+        btnShowScale.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
         btnShowScale.setText("Show Scale");
         btnShowScale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,79 +169,97 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
+        jLabel9.setText("Enter Meridian cm UTM :");
+
+        jLabel10.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
+        jLabel10.setText("Enter Paralel cm UTM :");
+
+        txtMeridianCm.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+
+        txtParalelCm.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnShow)
+                .addGap(103, 103, 103))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(166, 166, 166))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(225, 225, 225))))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(191, 191, 191)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtMeridian, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMeridianCm, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtParalel, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtParalelCm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel8)
+                                .addGap(124, 124, 124)
+                                .addComponent(txtScale, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnSaveScale)
-                                .addGap(34, 34, 34)
-                                .addComponent(btnCalculateScale)
-                                .addGap(150, 150, 150))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(109, 109, 109)
-                                        .addComponent(txtEnterTheScale, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(105, 105, 105)
-                                        .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel6))
-                                        .addGap(66, 66, 66)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(txtutmLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnutmCoordenates)
+                                .addGap(71, 71, 71))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnCalculate)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btnSave)))
-                                .addGap(11, 11, 11)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtshowUtmCoordenates)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addComponent(btnShowScale)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(114, 114, 114)
-                                    .addComponent(btnutmCoordenates))))
-                        .addGap(67, 67, 67))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(166, 166, 166))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(225, 225, 225))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnShow)
-                                .addGap(169, 169, 169))))))
+                                    .addComponent(btnSave))
+                                .addGap(18, 18, 18)
+                                .addComponent(txtshowUtmCoordenates, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(35, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(btnCalculateScale)
+                        .addGap(72, 72, 72)
+                        .addComponent(jScrollPane2)
+                        .addGap(23, 23, 23))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnShowScale)
+                .addGap(126, 126, 126))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,51 +269,69 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(5, 5, 5)
-                        .addComponent(btnCalculate)
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel4)
+                                            .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addComponent(btnCalculate)))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnShow)))
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9)
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel10)
+                                .addGap(16, 16, 16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtshowUtmCoordenates, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                    .addComponent(btnSave))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnutmCoordenates))))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtMeridian, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(txtParalel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnShow)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtutmLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(txtshowUtmCoordenates, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtutmLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(btnutmCoordenates)
-                .addGap(41, 41, 41)
+                        .addComponent(txtMeridianCm, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtParalelCm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(txtEnterTheScale, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSaveScale)
-                            .addComponent(btnCalculateScale)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(btnShowScale)))
-                .addGap(32, 32, 32))
+                            .addComponent(txtScale, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCalculateScale))
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnShowScale)
+                        .addGap(26, 26, 26))))
         );
 
         pack();
@@ -311,7 +361,7 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
         geographicCoordenateController.save(geographicCoordenate);
         minutesLongitude = geographicCoordenateController.calculateMinutesLongitude(longitude);
         decimalPartLongitude = geographicCoordenateController.calculateDecimalPartLongitude(minutesLongitude);
-  
+
         wholePartLongitude = geographicCoordenateController.calculateWholePartLongitude(minutesLongitude, decimalPartLongitude);
         secondsLongitude = geographicCoordenateController.calculateSecondsLongitude(decimalPartLongitude);
         minutesLatitude = geographicCoordenateController.calculateMinutesLatitude(latitude);
@@ -331,58 +381,65 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
 
     private void btnutmCoordenatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnutmCoordenatesActionPerformed
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        txtshowUtmCoordenates.setText(geographicCoordenateController.read());
+        UtmCoordenateController utmCoordenateController = new UtmCoordenateController();
+        txtshowUtmCoordenates.setText(utmCoordenateController.read());
     }//GEN-LAST:event_btnutmCoordenatesActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        float latitude;
-        float longitude;
+        UtmCoordenate utmCoordenate;
+        float utmMeridian;
+        float utmParalel;
+        float utmMeridianCm;
+        float utmParalelCm;
+        float meridian;
+        float paralel;
+        float meridianCm;
+        float paralelCm;
+        float meridianCoordenate;
+        float paralelCoordenate;
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        GeographicCoordenate geographicCoordenate = null;
+        UtmCoordenateController utmCoordenateController = new UtmCoordenateController();
 
-        latitude = Float.parseFloat(txtutmLatitude.getText());
-        longitude = Float.parseFloat(txtutmLongitude.getText());
+        utmMeridian = Float.parseFloat(txtMeridian.getText());
+        utmParalel = Float.parseFloat(txtParalel.getText());
+        utmMeridianCm = Float.parseFloat(txtMeridianCm.getText());
+        utmParalelCm = Float.parseFloat(txtParalelCm.getText());
 
-        geographicCoordenateController.save(geographicCoordenate);
+        meridian = utmCoordenateController.calculateUtmMeridian(utmMeridian);
+        paralel = utmCoordenateController.calculateUtmParalel(utmParalel);
+        meridianCm = utmCoordenateController.calculateUtmMeridianCm(utmMeridianCm);
+        paralelCm = utmCoordenateController.calculateUtmParalelCm(utmParalelCm);
+        meridianCoordenate = meridian + meridianCm;
+        paralelCoordenate = paralel + paralelCm;
+        
+        JOptionPane.showMessageDialog(rootPane, meridianCoordenate + " X" + "\n" + paralelCoordenate + " Y");
 
-        JOptionPane.showMessageDialog(rootPane, geographicCoordenate.getName());
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnSaveScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveScaleActionPerformed
-        float Scale;
-
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        UtmCoordenate geographicCoordenate = null;
-
-        Scale = Float.parseFloat(btnCalculateScale.getText());
-
-        geographicCoordenateController.save(geographicCoordenate);
-
-        JOptionPane.showMessageDialog(rootPane, geographicCoordenate.getName());
-
-
-    }//GEN-LAST:event_btnSaveScaleActionPerformed
-
     private void btnCalculateScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateScaleActionPerformed
-        Float Scale;
+        int finalScale;
+        int scaleTransformation;
+        Scale scale;
 
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        UtmCoordenate geographicCoordenate;
+        ScaleController scaleController = new ScaleController();
 
-        Scale = Float.parseFloat(txtEnterTheScale.getText());
+        finalScale = Integer.parseInt(txtScale.getText());
 
-        geographicCoordenate = new UtmCoordenate(Scale);
+        scaleTransformation = scaleController.calculateScale(finalScale);
 
-        JOptionPane.showMessageDialog(rootPane, " Transfotmation Scale --> " + Scale);
+        JOptionPane.showMessageDialog(rootPane, "The scale 1: " + finalScale + " means 1cm in the map is " + scaleTransformation + " m in the reality ");
+        //JOptionPane.showMessageDialog(rootPane, scale.getScale());
     }//GEN-LAST:event_btnCalculateScaleActionPerformed
 
     private void btnShowScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowScaleActionPerformed
-        GeographicCoordenateController geographicCoordenateController = new GeographicCoordenateController();
-        txtCalculateTheScale.setText(geographicCoordenateController.read());
+        ScaleController calculateScaleController = new ScaleController();
+        txtCalculateTheScale.setText(calculateScaleController.read());
     }//GEN-LAST:event_btnShowScaleActionPerformed
+
+    private void txtScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtScaleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtScaleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -423,11 +480,11 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
     private javax.swing.JButton btnCalculate;
     private javax.swing.JButton btnCalculateScale;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSaveScale;
     private javax.swing.JButton btnShow;
     private javax.swing.JButton btnShowScale;
     private javax.swing.JButton btnutmCoordenates;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -435,16 +492,19 @@ public class frmGeographicCoordenate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea txtCalculateTheScale;
-    private javax.swing.JTextField txtEnterTheScale;
     private javax.swing.JTextField txtLatitude;
     private javax.swing.JTextField txtLongitude;
+    private javax.swing.JTextField txtMeridian;
+    private javax.swing.JTextField txtMeridianCm;
+    private javax.swing.JTextField txtParalel;
+    private javax.swing.JTextField txtParalelCm;
+    private javax.swing.JTextField txtScale;
     private javax.swing.JTextArea txtShowGeographicCoordinate;
     private javax.swing.JTextField txtshowUtmCoordenates;
-    private javax.swing.JTextField txtutmLatitude;
-    private javax.swing.JTextField txtutmLongitude;
     // End of variables declaration//GEN-END:variables
 
 }

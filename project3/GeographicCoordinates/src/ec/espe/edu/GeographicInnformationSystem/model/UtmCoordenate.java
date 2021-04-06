@@ -11,58 +11,72 @@ package ec.espe.edu.GeographicInnformationSystem.model;
  */
 public class UtmCoordenate {
 
-    private Float utmlongitude;
-    private Float utmlatitude;
+    private float utmMeridian;
+    private float utmParalel;
+    private float utmMeridianCm;
+    private float utmParalelCm;
 
-    public UtmCoordenate(Float utmlongitude, Float utmlatitude) {
-
-        this.utmlongitude = utmlongitude;
-        this.utmlatitude = utmlatitude;
-    }
-
-    
-    /**
-     * @return the longitude
-     */
-    /**
-     * @param longitude the longitude to set
-     */
-    /**
-     * @return the latitude
-     */
-    /**
-     * @param latitude the latitude to set
-     */
-    /**
-     * @return the utmlongitude
-     */
-    public Float getUtmlongitude() {
-        return utmlongitude;
+    public UtmCoordenate(float utmMeridian, float utmParalel, float utmMeridianCm, float utmParalelCm) {
+        this.utmMeridian = utmMeridian;
+        this.utmParalel = utmParalel;
+        this.utmMeridianCm = utmMeridianCm;
+        this.utmParalelCm = utmParalelCm;
     }
 
     /**
-     * @param utmlongitude the utmlongitude to set
+     * @return the utmMeridian
      */
-    public void setUtmlongitude(Float utmlongitude) {
-        this.utmlongitude = utmlongitude;
+    public float getUtmMeridian() {
+        return utmMeridian;
     }
 
     /**
-     * @return the utmlatitude
+     * @param utmMeridian the utmMeridian to set
      */
-    public Float getUtmlatitude() {
-        return utmlatitude;
+    public void setUtmMeridian(float utmMeridian) {
+        this.utmMeridian = utmMeridian;
     }
 
     /**
-     * @param utmlatitude the utmlatitude to set
+     * @return the utmParalel
      */
-    public void setUtmlatitude(Float utmlatitude) {
-        this.utmlatitude = utmlatitude;
+    public float getUtmParalel() {
+        return utmParalel;
     }
 
-    public Object getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @param utmParalel the utmParalel to set
+     */
+    public void setUtmParalel(float utmParalel) {
+        this.utmParalel = utmParalel;
+    }
+
+    /**
+     * @return the utmMeridianCm
+     */
+    public float getUtmMeridianCm() {
+        return utmMeridianCm;
+    }
+
+    /**
+     * @param utmMeridianCm the utmMeridianCm to set
+     */
+    public void setUtmMeridianCm(float utmMeridianCm) {
+        this.utmMeridianCm = utmMeridianCm;
+    }
+
+    /**
+     * @return the utmParalelCm
+     */
+    public float getUtmParalelCm() {
+        return utmParalelCm;
+    }
+
+    /**
+     * @param utmParalelCm the utmParalelCm to set
+     */
+    public void setUtmParalelCm(float utmParalelCm) {
+        this.utmParalelCm = utmParalelCm;
     }
 
 }

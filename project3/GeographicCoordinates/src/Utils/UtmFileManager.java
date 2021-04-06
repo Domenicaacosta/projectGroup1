@@ -5,37 +5,18 @@
  */
 package Utils;
 
-;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 /**
  *
- * @author Domenica
+ * @author Asus
  */
-
-
-public class FileManager {
-
-    public static boolean createFile(String fileName) {
+public class UtmFileManager {
+     public static boolean createFile(String fileName) {
         boolean created = false;
 
         try {
@@ -62,7 +43,7 @@ public class FileManager {
         createFile(fileName);
 
         try {
-            FileWriter myWrite = new FileWriter(fileName + ".csv", true);
+            FileWriter myWrite = new FileWriter(fileName + ".txt", true);
             myWrite.write(System.getProperty("line.separator") + data);
             myWrite.close();
             System.out.println("a new record of " + fileName + " was saved");
@@ -90,3 +71,5 @@ public class FileManager {
     }
 
 }
+    
+

@@ -5,7 +5,7 @@
  */
 package ec.espe.edu.GeographicInnformationSystem.controller;
 
-import Utils.FileManager;
+import Utils.GeographicFileManager;
 import ec.espe.edu.GeographicInnformationSystem.model.GeographicCoordenate;
 import ec.espe.edu.GeographicInnformationSystem.model.UtmCoordenate;
 import javax.swing.JOptionPane;
@@ -16,14 +16,6 @@ import java.text.DecimalFormat;
  * @author Domenica
  */
 public class GeographicCoordenateController {
-
-    float latitude;
-
-    float decimalPartLatitude;
-
-    float wholePartLatitude;
-    float secondsLatitude;
-
     public void save(GeographicCoordenate geographicCoordenate) {
         float longitude;
         float latitude;
@@ -53,7 +45,7 @@ public class GeographicCoordenateController {
         secondsLatitude = calculateSecondsLatitude(decimalPartLatitude);
         dataLongitude = longitudeGrade + "° " + secondsLongitude + "' " + wholePartLongitude + "'' " + "O";
         dataLatitude = latitudeGrade + "° " + wholePartLatitude + "' " + secondsLatitude + "'' " + "S";
-        FileManager.save("Geographic Coordenates" + "\n"+ "Longitude" + dataLongitude + "\n" + "Latitude" + dataLatitude, "geographicCoordenate");
+        GeographicFileManager.save("---Geographic Coordenates---" + "\n" + "Longitude: " + dataLongitude + "\n" + "Latitude: " + dataLatitude + "\n", "geographicCoordenate" );
     }
 
     public float calculateSecondsLatitude(float decimalPartLatitude) {
@@ -104,37 +96,15 @@ public class GeographicCoordenateController {
         secondsLongitude = decimalPartLongitude * 60;
         return secondsLongitude;
     }
-    
-    private static void showUtmCoordenates(DecimalFormat df, float utmLongitude, float utmLatitude) {
-        System.out.println("THE UTM COORDENATES ARE ");
-        System.out.println(df.format(utmLongitude) + "m E ");
-        System.out.println(df.format(utmLatitude) + "m S ");
-    }
-
-    private static double calculateUtmLatitude(float latitude) {
-        float utmLatitude;
-        utmLatitude = (latitude * 1000) / 3;
-        return utmLatitude;
-    }
-
-    private static double calculateUtmLongitude(float longitude) {
-        float utmLongitude;
-        utmLongitude = (longitude * 1000) / 3;
-        return utmLongitude;
-    }
+   
         public String read (){
         String data;
-        data= FileManager.read("geographicCoordenates.csv");
+        data= GeographicFileManager.read("geographicCoordenates.txt");
         return data;
 
 }
-        private static double calculateScale(float Scale){
-            float utmScale;
-                utmScale = Scale / 100;
-                return utmScale;
-                
-        }
-        
+    
+
 
                 
                 
