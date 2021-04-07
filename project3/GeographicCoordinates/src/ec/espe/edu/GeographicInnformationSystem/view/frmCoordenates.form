@@ -64,7 +64,6 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="btnCalculateScale" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                                           </Group>
@@ -247,7 +246,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="AreaShowGeographicCoordinates">
+        <Component class="javax.swing.JTextArea" name="txtAreaShowGeographicCoordinates">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -322,7 +321,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="AreaShowUtmCoordenates">
+        <Component class="javax.swing.JTextArea" name="txtAreaShowUtmCoordenates">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -334,6 +333,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Show UTM Coordenates"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowUtmCoordenateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
@@ -365,7 +367,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="AreaShowScale">
+        <Component class="javax.swing.JTextArea" name="txtAreaShowScale">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -375,8 +377,11 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnShowScale">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton3"/>
+        <Property name="text" type="java.lang.String" value="Show Scale"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowScaleActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

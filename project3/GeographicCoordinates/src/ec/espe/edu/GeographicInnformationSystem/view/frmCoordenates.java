@@ -42,7 +42,7 @@ public class frmCoordenates extends javax.swing.JFrame {
         txtLatitude = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        AreaShowGeographicCoordinates = new javax.swing.JTextArea();
+        txtAreaShowGeographicCoordinates = new javax.swing.JTextArea();
         btnShowGeographicCoordinate = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -56,14 +56,14 @@ public class frmCoordenates extends javax.swing.JFrame {
         txtParalelCm = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        AreaShowUtmCoordenates = new javax.swing.JTextArea();
+        txtAreaShowUtmCoordenates = new javax.swing.JTextArea();
         btnShowUtmCoordenate = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtScale = new javax.swing.JTextField();
         btnCalculateScale = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        AreaShowScale = new javax.swing.JTextArea();
+        txtAreaShowScale = new javax.swing.JTextArea();
         btnShowScale = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,9 +82,9 @@ public class frmCoordenates extends javax.swing.JFrame {
             }
         });
 
-        AreaShowGeographicCoordinates.setColumns(20);
-        AreaShowGeographicCoordinates.setRows(5);
-        jScrollPane1.setViewportView(AreaShowGeographicCoordinates);
+        txtAreaShowGeographicCoordinates.setColumns(20);
+        txtAreaShowGeographicCoordinates.setRows(5);
+        jScrollPane1.setViewportView(txtAreaShowGeographicCoordinates);
 
         btnShowGeographicCoordinate.setText("Show Geographic Coordenates");
         btnShowGeographicCoordinate.addActionListener(new java.awt.event.ActionListener() {
@@ -114,11 +114,16 @@ public class frmCoordenates extends javax.swing.JFrame {
             }
         });
 
-        AreaShowUtmCoordenates.setColumns(20);
-        AreaShowUtmCoordenates.setRows(5);
-        jScrollPane2.setViewportView(AreaShowUtmCoordenates);
+        txtAreaShowUtmCoordenates.setColumns(20);
+        txtAreaShowUtmCoordenates.setRows(5);
+        jScrollPane2.setViewportView(txtAreaShowUtmCoordenates);
 
         btnShowUtmCoordenate.setText("Show UTM Coordenates");
+        btnShowUtmCoordenate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowUtmCoordenateActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Maiandra GD", 3, 14)); // NOI18N
         jLabel10.setText("Scale Transformation");
@@ -132,11 +137,16 @@ public class frmCoordenates extends javax.swing.JFrame {
             }
         });
 
-        AreaShowScale.setColumns(20);
-        AreaShowScale.setRows(5);
-        jScrollPane3.setViewportView(AreaShowScale);
+        txtAreaShowScale.setColumns(20);
+        txtAreaShowScale.setRows(5);
+        jScrollPane3.setViewportView(txtAreaShowScale);
 
-        btnShowScale.setText("jButton3");
+        btnShowScale.setText("Show Scale");
+        btnShowScale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowScaleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,7 +189,6 @@ public class frmCoordenates extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(btnCalculateScale)
                                                 .addGap(81, 81, 81))
                                             .addGroup(layout.createSequentialGroup()
@@ -371,6 +380,16 @@ public class frmCoordenates extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "The scale 1: " + finalScale + " means 1cm in the map is " + scaleTransformation + " m in the reality ");
     }//GEN-LAST:event_btnCalculateScaleActionPerformed
 
+    private void btnShowUtmCoordenateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowUtmCoordenateActionPerformed
+         UtmCoordenateController utmCoordenateController = new UtmCoordenateController();
+        btnShowUtmCoordenate.setText(utmCoordenateController.read());
+    }//GEN-LAST:event_btnShowUtmCoordenateActionPerformed
+
+    private void btnShowScaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowScaleActionPerformed
+        ScaleController scaleController = new ScaleController();
+        btnCalculateScale.setText(scaleController.read());
+    }//GEN-LAST:event_btnShowScaleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -407,9 +426,6 @@ public class frmCoordenates extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea AreaShowGeographicCoordinates;
-    private javax.swing.JTextArea AreaShowScale;
-    private javax.swing.JTextArea AreaShowUtmCoordenates;
     private javax.swing.JButton btnCalculateScale;
     private javax.swing.JButton btnShowGeographicCoordinate;
     private javax.swing.JButton btnShowScale;
@@ -430,6 +446,9 @@ public class frmCoordenates extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea txtAreaShowGeographicCoordinates;
+    private javax.swing.JTextArea txtAreaShowScale;
+    private javax.swing.JTextArea txtAreaShowUtmCoordenates;
     private javax.swing.JTextField txtLatitude;
     private javax.swing.JTextField txtLongitude;
     private javax.swing.JTextField txtMeridian;
